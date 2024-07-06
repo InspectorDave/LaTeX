@@ -1,0 +1,64 @@
+\section{Derivadas}
+
+
+\begin{multicols}{2}
+\subsection*{Por definición}
+
+$$f'(x) = \lim\limits_{h\rightarrow 0}\dfrac{f(x+h) - f(x)}{h}$$
+
+
+\subsection*{Recta tangente}
+
+La recta tangente es una función lineal, por lo tanto cumplirá $t(x) = m\cdot x + b$.
+
+\noindent
+Su pendiente en un punto es la derivada en ese punto:
+
+\hfil$m=f'(x_0)$.\hfil
+
+\noindent
+Para obtener su ordenada al origen reemplazar en $t(x)$ con los puntos de las función y la pendiente obtenida, es decir:
+
+\hfil$ y_0 = m \cdot x_0 + b $\hfil
+
+\noindent
+Despejar $b$ y listo!
+
+\subsection*{Polinomio de Taylor}
+
+Sirve para aproximar funciones con una nueva:
+
+$$\sum \limits_{n=0}^\infty \frac {{f^{(n)}} (a)}{n!} (x-a)^n$$
+\vfill
+
+
+\subsection*{Tabla de derivadas}
+{
+\renewcommand{\arraystretch}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor[HTML]{F0F0F0}
+$f(x)$ & $f'(x)$ \\ \hline
+$k$ & 0 \\ \hline
+$x$ & 1 \\ \hline
+$x^k$ & $k\cdot x^{k-1}$ \\ \hline 
+$e^x$ & $e^x$ \\ \hline
+$a^x$ & $a^x \cdot \ln(a)$ \\ \hline
+$\ln(x)$ & $\dfrac{1}{x}$ \\ 
+& \\[-9mm] \hline
+$\log_B(x)$ & $\dfrac{1}{x}\cdot \log_B(e)$ \\
+& \\[-9mm] \hline
+$\sin(x)$ & $\cos(x)$ \\ \hline
+$\cos(x)$ & $-\sin(x)$ \\ \hline
+$\tan(x)$ & $\dfrac{1}{\cos^2(x)}$ \\
+& \\[-9mm] \hline
+$f(x)\cdot g(x)$ & $f'(x) \cdot g(x) + f(x) \cdot g'(x)$ \\ \hline
+$\dfrac{f(x)}{g(x)}$ & $\dfrac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{g^2(x)}$ \\
+& \\[-9mm] \hline
+$f\,\big(g(x)\big)$ & $f'\big(g(x)\big) \cdot f'(x) $ \\ \hline
+\end{tabular}
+\end{table}
+}
+\end{multicols}

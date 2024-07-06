@@ -1,0 +1,91 @@
+\section{Análisis de funciones}
+
+
+\subsection*{Conjunto de positividad/negatividad ($C^+/C^-$)}
+
+Hay que analizar los intervalos entre los puntos críticos (infinitos, raíces, discontinuidades).
+
+{\renewcommand{\arraystretch}{1.25}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& 
+\multicolumn{1}{c|}{$\left(-\infty ; -\dfrac{5}{2}\right)$} & 
+\multicolumn{1}{c|}{$-\dfrac{5}{2}$} & 
+\multicolumn{1}{c|}{$\left(-\dfrac{5}{2}; \dfrac{7}{2}\right)$} & 
+$\dfrac{7}{2}$ & 
+$\left(\dfrac{7}{2};\infty\right)$ \\ \hline
+$f(x)$&    $-$                 &    0                   &         $+$              & \O & $+$ \\ \hline
+\end{tabular}
+\end{table}
+}
+
+
+\subsection*{Intervalos de crecimiento/decrecimiento ($\text{I}^\nearrow/ \text{I}^\searrow$)}
+
+Hay que analizar los intervalos entre los puntos críticos de la derivada (en la función, estos pueden llegar a ser \textbf{máximos} o \textbf{mínimos}). El conjunto de positividad de la derivada es el intervalo de crecimiento de la función, el conjunto de negatividad de la derivada es el intervalo de decrecimiento de la función.
+
+{\renewcommand{\arraystretch}{1.25}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+&
+\multicolumn{1}{c|}{$\left(-\infty ; -\dfrac{\sqrt{3}}{2}\right)$} & 
+\multicolumn{1}{c|}{$-\dfrac{\sqrt{3}}{2}$} & 
+\multicolumn{1}{c|}{$\left(-\dfrac{\sqrt{3}}{2}; \dfrac{\sqrt{3}}{2}\right)$} & 
+$\dfrac{\sqrt{3}}{2}$ & 
+$\left(\dfrac{\sqrt{3}}{2};8\right)$ & 8 & $(8; \infty)$\\ \hline
+$f'(x)$ & $+$ & 0 & - & 0 & + & 0& +\\ \hline
+$f(x)$&  $\uparrow$ & max & $\downarrow$ & min & $\uparrow$ & $\text{nada}$ & $\uparrow$\\ \hline
+\end{tabular}
+\end{table}
+}
+
+
+\subsection*{Concavidad/convexidad ($\text{I}^\cap/\text{I}^\cup$)}
+
+Para analizar la concavidad, hay que analizar los intervalos entre los puntos críticos de la segunda derivada (en la función estos son los puntos de inflexión).
+
+En el conjunto de positividad de la segunda derivada la función será convexa (también llamada hacia arriba o $\cup$) y en el de negatividad será cóncava (también llamada hacia abajo o $\cap$).
+
+{\renewcommand{\arraystretch}{1.25}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+&
+\multicolumn{1}{c|}{$(-\infty ; -6)$} & 
+\multicolumn{1}{c|}{$-6$} & 
+\multicolumn{1}{c|}{$(-6 ; 2)$} & 
+$2$ & 
+$(2; 10)$ & $10$ & $(10; \infty)$\\ \hline
+$f''(x)$ & $+$ & 0 & - & 0 & + & 0 & 0\\ \hline
+$f(x)$ &  $\cup$ & PI & $\cap$ & PI & $\cup$ & nada & nada\\ \hline
+\end{tabular}
+\end{table}
+}
+
+
+\subsection*{Asíntotas horizontales}
+
+Pueden ocurrir únicamente cuando $x\rightarrow \infty$ o $x\rightarrow -\infty$. Si el límite en esos puntos es un número, entonces habrá una asíntota horizontal en ese número.
+
+
+\subsection*{Asíntotas verticales}
+
+Ocurren cuando el límite por izquierda o derecha para un valor del codominio es $\infty$ o $-\infty$. En general son para puntos donde hay divisiones por cero, rectas tangentes o logaritmos.
+
+\newpage
+\subsection*{Asíntotas oblicuas}
+
+Para saber si existen se tiene que dar que la función tiende a acercarse a una recta oblicua en infinito o menos infinito. Para obtener su fórmula ``$m\cdot x + b$'' se hace:
+
+\skipline
+\hfil$m = \lim\limits_{x\rightarrow \pm\infty} \dfrac{f(x)}{x}$\hfil$b = \lim\limits_{x\rightarrow \pm \infty} f(x) - m\cdot x$\hfil
+
+\skipline
+\noindent
+Tener en cuenta que si no existe una asíntota oblicua $m$ dará $\pm\infty$ o 0 (asíntota horizontal).
+
