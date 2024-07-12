@@ -1,6 +1,6 @@
 # Repositorio para apuntes, guías y documentos para dar clases
 
-Este repositorio es para recopilar apuntes, guías y documentos que utilicé para dar clases particulares. Fueron hechos por mí para asistirme en la enseñanza. No buscan estar completos, ser exhaustivos y pueden lelgar a tener errores. Si encontrás alguno hacémelo saber.
+Este repositorio es para recopilar apuntes, guías y documentos que utilicé para dar clases particulares. Fueron hechos por mí para asistirme en la enseñanza. No buscan estar completos, ser exhaustivos y pueden llegar a tener errores. Si encontrás alguno hacémelo saber.
 
 # Sobre el autor
 
