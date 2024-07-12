@@ -1,0 +1,116 @@
+\section{Balanceo de ecuaciones}
+
+\subsection{Método algebraico}
+
+Cada elemento genera una ecuación. A cada compuesto se le asigna una letra (incógnita). Luego en cada ecuación se multiplica cada letra por la cantidad de veces que aparece el elemento en el compuesto y finalmente se resuelve el sistema de ecuaciones.
+
+\skipline
+\underline{Ejemplo:}
+
+$$\text{Fe} + \text{HCl} \longrightarrow \text{FeCl}_3 + \text{H}_2$$
+
+\begin{minipage}[l]{0.2\textwidth}
+\begin{align*}
+\text{Fe}&: A = C\\
+\text{H}&: B = 2D\\
+\text{Cl}&: B = 3C\\
+\;
+\end{align*}
+\end{minipage}
+$\Longrightarrow$
+\hfil
+$B=2D=3C=3A$
+\hfil
+$\Longrightarrow$
+\begin{minipage}[l]{0.1\textwidth}
+\begin{align*}
+A&= 2\\
+B&= 6\\
+C&= 2\\
+D&= 3
+\end{align*}
+\end{minipage}
+$\Longrightarrow$
+\hfil 
+\fbox{$2\text{Fe} + 6\text{HCl} \longrightarrow 2\text{FeCl}_3 + 3\text{H}_2$}
+\hfil
+
+\subsection{Redox}
+
+\subsubsection*{N$^\circ$ de oxidación}
+
+Es la cantidad de electrones que un compuesto pone en juego.
+
+Elementos pareados consigo mismo: 0. Elementos en estado elemental: 0. Iones: su carga. Oxígeno: -2. Hidrógeno: -1/+1. Alcalinos: +1. Alcalinotérreos: +2. Los no metales cuando se ponen con un metal tienen su número de oxidación negativo.
+
+Entre dos elementos, el más electronegativo es que tendrá número de oxidación negativo.
+
+\subsubsection*{Reacción redox}
+
+Es una reacción química donde hay transferencia de electrones (cambian los números de oxidación).
+
+El reductor es el que pierde electrones, se oxida, el oxidante es el que \underline{re}cibe electrones, se \underline{re}duce.
+
+Para resolver un ejercicio de redox:
+\begin{enumerate}[itemsep=0pt, parsep=0.3em, topsep=0.3em]
+    \item Identificar al compuesto que se oxida y al que se reduce.
+    \item Identificar si se está en medio ácido o básico (puedo no estarse en ninguno).
+    \item Escribir la semirreacción de oxidación y la de reducción, poniendo solo los iones afectados.
+    \item Balancear compuestos y cargas (agregando los $e^-$ y los H$^+$, (OH)$^-$ según el medio. En medio básico, las aguas van donde hay más oxígenos. Agregar un agua por cada oxígeno que falte y el doble de OH.
+    \item Poner todos los electrones en el mismo lado de las ecuaciones, y multiplicar de manera que queden la misma cantidad en cada una.
+    \item Sumar las ecuaciones resultantes, se tienen que cancelar los electrones y luego simplificar si se da el caso.
+    \item Finalmente llevar los coeficientes obtenidos a la fórmula original, agregando por tanteo lo que haga falta.
+\end{enumerate}
+
+\newpage
+\textbf{\underline{Ejemplo simple:}}
+
+$$\text{Fe} + \text{Cl}_2 \longrightarrow \text{FeCl}_2$$
+
+\begin{multicols}{2}
+
+\underline{Semirreacción de oxidación:}
+
+$$\text{Fe} - 2e^- \longrightarrow \text{Fe}^{2+}$$
+
+\underline{Semirreacción de reducción:}
+
+$$\text{Cl}_2 + 2e^- \longrightarrow 2\text{Cl}^{-} $$
+
+\end{multicols}
+
+Las reacciones Redox pueden ser en medios ácidos o básicos. En caso de ser medio ácido, hay que compensar la falta de hidrógenos con cationes H$^+$. En caso de ser medio básico esta falta se compensa con grupos hidroxilos (OH)$^-$.
+
+\skipline
+\textbf{\underline{Ejemplo medio ácido:}}
+
+$$\text{KI} + \text{K} \text{I} \text{O}_3 + \text{H} \text{Cl} \longrightarrow
+\text{KCl} + \text{I}_2 +  \text{H}_2 \text{O}$$
+
+\hfil Ioduro de potasio \hfil + \hfil iodato de potasio \hfil + \hfil ácido clorhídrico \hfil
+$\rightarrow$ \hfil
+cloruro de potasio \hfil + \hfil iodo molecular \hfil + \hfil agua \hfil 
+
+\begin{multicols}{2}
+
+\underline{Semirreacción de oxidación:}
+
+$$2\text{I}^{-} \longrightarrow \text{I}_2 + 2e^-$$
+
+\underline{Semirreacción de reducción:}
+
+$$2(\text{IO}_3)^{-} + 12 \text{H}^+ \longrightarrow \text{I}_2 + 6\text{H}_2 \text{O} - 10e^-$$
+\end{multicols}
+
+Multiplico para que la cantidad de electrones sean iguales (multiplicar por cinco la de oxidación) y las sumo:
+
+$$10\text{I}^{-} + 2(\text{IO}_3)^{-} + 12 \text{H}^+ \longrightarrow 5 \text{I}_2 + 10 e^- + \text{I}_2 + 6\text{H}_2 \text{O} - 10e^-$$
+
+Cancelo los electrones, y si puedo simplifico, quedando:
+
+$$5\text{I}^{-} + (\text{IO}_3)^{-} + 6 \text{H}^+ \longrightarrow 3 \text{I}_2 + 3\text{H}_2 \text{O}$$
+
+Finalmente pongo los coeficientes en la fórmula original y agrego lo que haga falta:
+
+$$5\text{KI} + \text{K} \text{I} \text{O}_3 + 6\text{H} \text{Cl} \longrightarrow
+6\text{KCl} + 3\text{I}_2 +  3\text{H}_2 \text{O}$$
