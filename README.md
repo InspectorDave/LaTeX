@@ -4,9 +4,11 @@ Este repositorio es para recopilar apuntes, guías y documentos que utilicé par
 
 # Sobre el autor
 
-Soy Ezequiel Mundani Vegega, estudié Ingeniería Electrónica en la UBA hasta que me cambié a Ingeniería Informática (también en la UBA). 
+Soy Ezequiel Mundani Vegega, actualmente estoy estudiando Ingeniería Informática en la UBA y antes estudiaba Ingeniería Electrónica. El secundario lo hice en el Colegio Nacional de Buenos Aires.
 
 Doy clases particulares desde 2020, principalmente de matemática, física, química.
+
+En caso que quieras contactarme este es mi mail: emundani@fi.uba.ar
 
 # Si los querés usar
 
