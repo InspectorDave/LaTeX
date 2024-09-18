@@ -1,0 +1,103 @@
+\section{Exámenes del Molinos}
+
+\subsection*{Foto de consigna}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth, angle=90]{Images/molinos_examen1.jpg}
+\end{figure}
+
+\subsection*{Resolución}
+
+\begin{enumerate}
+\setlength\itemsep{2\baselineskip}
+
+\item Balanceo por redox:
+$$\ce{KMnO_4 + KOH + KI -> KIO_3 + K_2MnO_4}$$
+
+Escribo los números de oxidación:
+$$\ce{K^{+1}Mn^{+7}O_4^{-2} + K^{+1}O^{-2}H^{+1} + K^{+1}I^{-1} -> K^{+1}I^{+5}O_3^{-2} + K_2^{+1}Mn^{+6}O_4^{-2}}$$
+
+Identifico cuál se oxida, cuál se reduce, al agente oxidante y al agente reductor:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+    Se oxida: & I \\
+    Se reduce: & Mn \\
+    Agente oxidante: & \ce{KMnO_4} \\
+    Agente reductor: & \ce{KI}
+    \end{tabular}
+\end{table}
+
+Identifico que es medio básico, planteo las semirreacciones, las balanceo e igualo los electrones:
+\begin{multicols}{2}
+    \underline{Semirreacción de oxidación:}
+    $$\ce{I^- + 6OH^- ->
+    IO_3^- + 3H_2O + 6e^-}$$
+    
+    \underline{Semirreacción de reducción:}
+    $$\left( \ce{MnO_4^- + e^-  ->
+    MnO_4^{2-}} \right) \cdot 6$$
+\end{multicols}
+
+Sumo las semirreacciones: 
+$$\ce{
+I^- + 6 OH^- + 6MnO_4 + \xcancel{6e^-} -> IO_3^- + 3H_2O + 6 MnO_4^{2-}\xcancel{6e^-}
+}$$
+
+Finalmente se ponen los coeficientes en la reacción original:
+$$\fbox{\ce{6KMnO_4 + 6KOH + KI ->
+KIO_3 + 6K_2MnO_4 + 3H_2O}}$$
+
+
+\item Masa de reactivos en exceso:
+$$\ce{6KMnO_4 + 6KOH + KI ->
+KIO_3 + 6K_2MnO_4 + 3H_2O}$$
+
+Calculo los moles de \ce{KMnO_4}:
+
+\hfil$V_{\text{SC}}=50\text{cm}^3$
+\hfil0,3m
+\hfil$\delta = 1,05 \frac{\text{g}}{\text{cm}^3}$
+\hfil $M = 158\frac{\text{g}}{\text{mol}}$
+
+\hfil
+Hay $2,37\text{g}\equiv 0,015 \text{mol}$ de $\ce{KMnO_4}$
+\hfil
+
+Calculo los moles de \ce{KOH}:
+
+\hfil $V_{\text{SC}}=2,3 L$
+\hfil pH = 12,3
+\hfil 
+
+\hfil
+Hay $2,576\text{g} \equiv 0,046 \text{mol}$ de KOH
+\hfil
+
+Calculo los moles de \ce{KI}:
+
+\hfil $m_i = 7,5g (\text{pureza}75\%)$
+\hfil $M = 166\frac{\text{g}}{\text{mol}}$
+\hfil
+
+\hfil
+Hay $5,625\text{g} \equiv 0,0339 \text{mol}$ de KI
+\hfil
+
+El limitante es \ce{KMnO_4}. Sobran 0,031 mol $\equiv$ 1,74g de KOH y 0,0314 mol $\equiv$ 5,21 g de KI.
+
+Finalmente: 
+
+\hfil
+\fbox{masa de reactivos en exceso = 6,95 g}
+\hfil
+
+
+\item Presión del vapor del agua obtenida en un reactor de medio litro a 110ºC:
+\begin{align*}
+    P \cdot 0,5 \text{ l} &= 0,0075 \text{ mol} \cdot 0,082 \frac{\text{l}\cdot \text{atm}}{\text{mol} \cdot \text{K}} \cdot 383 \text{ K}\\
+    P &= \dfrac{0,236 \text{ atm}}{0,5}\\
+    \Aboxed{P &= 0,471\text{ atm}}
+\end{align*}
+
+\end{enumerate}
