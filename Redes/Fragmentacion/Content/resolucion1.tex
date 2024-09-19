@@ -83,7 +83,7 @@ El fragmento 1 es menor al MTU de L2, hay que volver a fragmentarlo.
 \underline{Fragmentos a través de L4:}
 
 \skipline
-Ningún fragmento es menor al MTU, por lo tanto no hay que volver a fragmentar.
+Ningún fragmento es menor al MTU, no hay que volver a fragmentar. Estos son los que llegan a \textbf{B}.
 
 \begin{table}[H]
     \renewcommand{\arraystretch}{1.5}
@@ -108,7 +108,7 @@ Ningún fragmento es menor al MTU, por lo tanto no hay que volver a fragmentar.
         
     \item ¿Qué pasaría si el DF inicial fuera 1?
     
-    El paquete es envíado pero en R1 al necesitar fragmentar el paquete es descartado y se envía ICMP ``Fragmentation Needed'' al host.
+    El paquete es envíado pero en R1 al necesitar fragmentar el paquete es descartado y se envía un mensaje ``Fragmentation Needed'' utilizando ICMP al host.
 
     \item ¿Podría reensamblarse el paquete en el último router?
 
@@ -116,7 +116,7 @@ Ningún fragmento es menor al MTU, por lo tanto no hay que volver a fragmentar.
 
     \item ¿Qué pasa si se pierde uno de los fragmentos?
 
-    En el host destino se establece un timeout cuando llega el primer fragmento de un paquete. Una vez que se agota dicho timeout se descartan todos los fragmentos recibidos. Desde la capa de transporte esta situación es equivalente a la pérdida del paquete entero y dependerá de la capa de transporte si ocurre un reenvío.
+    En el host destino se establece un timeout cuando llega el primer fragmento de un paquete. Una vez que se agota dicho timeout se descartan todos los fragmentos de ese ID recibidos. Desde la capa de transporte esta situación es equivalente a la pérdida del paquete entero y dependerá de la capa de transporte si ocurre un reenvío.
 
     \item ¿Qué pasa si llegan desordenados?
     
