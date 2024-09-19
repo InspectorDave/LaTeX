@@ -1,6 +1,6 @@
-\section*{Consigna 1}
+\section*{Consigna 2}
 
-Se quiere enviar un paquete de 1600 B de payload desde \textbf{A} hasta \textbf{B} utilizando IPv4 a través de una red cuya topología se muetra a continuación. DF inicial es 0.
+Se quiere enviar un paquete de 2000 B de payload desde \textbf{A} hasta \textbf{B} utilizando IPv4 a través de una red cuya topología se muetra a continuación. DF inicial es 0.
 
 \begin{figure}[H]
     \centering
@@ -15,16 +15,15 @@ Se quiere enviar un paquete de 1600 B de payload desde \textbf{A} hasta \textbf{
     \begin{tabular}{|c|c|c|c|c|}
     \hline
      & L1 & L2 & L3 & L4 \\ \hline
-    MTU (B) & 2000 & 1000 & 800 & 2000\\ \hline
+    MTU (B) & 1700 & 600 & 598 & 560\\ \hline
     \end{tabular}
 \end{table}
 }
 
 
-\begin{enumerate}
-    \item Llenar la siguiente tabla con todos los paquetes que lleguen al host:
+Llenar la siguiente tabla con todos los paquetes que lleguen al host:
 
-    \begin{table}[H]
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{|c|c|crrrrr|}
@@ -34,15 +33,5 @@ Se quiere enviar un paquete de 1600 B de payload desde \textbf{A} hasta \textbf{
     \multicolumn{1}{|r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} &  \\ \hline
     \multicolumn{1}{|r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{r|}{} &  \\ \hline
     \end{tabular}
-    \end{table}
+\end{table}
 
-    \item ¿Llegarían los mismos fragmentos si se quisiera enviar el mismo paquete desde \textbf{B} hacia \textbf{A}?
-    
-    \item ¿Qué pasaría si el DF inicial fuera 1?
-    
-    \item ¿Podría reensamblarse el paquete en el último router?
-    
-    \item ¿Qué pasa si se pierde uno de los fragmentos?
-    
-    \item ¿Qué pasa si llegan desordenados?
-\end{enumerate}

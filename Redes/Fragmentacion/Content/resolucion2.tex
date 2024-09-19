@@ -1,0 +1,63 @@
+\section*{Resolución 2}
+
+\noindent
+\underline{Fragmentos a través de L1:}
+
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|c|c|crrrr|}
+    \hline
+    \multirow{2}{*}{Fragment Name} & \multirow{2}{*}{Payload Size} & \multicolumn{5}{c|}{Datagram Header} \\ \cline{3-7} 
+     &  & \multicolumn{1}{c|}{IHL} & \multicolumn{1}{c|}{Total Length} & \multicolumn{1}{c|}{MF} & \multicolumn{1}{c|}{DF} & \multicolumn{1}{c|}{Fragment Offset} \\ \hline
+    \multicolumn{1}{|r|}{1} & \multicolumn{1}{r|}{1680} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{1700} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 0 \\ \hline
+    \multicolumn{1}{|r|}{2} & \multicolumn{1}{r|}{320} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{340} & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{0} & 210 \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\noindent
+\underline{Fragmentos a través de L2:}
+
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|r|r|rrrrr|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}{*}{Fragment Name}} & \multicolumn{1}{c|}{\multirow{2}{*}{Payload Size}} & \multicolumn{5}{c|}{Datagram Header} \\ \cline{3-7} 
+    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{IHL} & \multicolumn{1}{c|}{Total Length} & \multicolumn{1}{c|}{MF} & \multicolumn{1}{c|}{DF} & \multicolumn{1}{c|}{Fragment Offset} \\ \hline
+    1.1 & 576 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{596} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 0 \\ \hline
+    1.2 & 576 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{596} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 72 \\ \hline
+    1.3 & 528 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{548} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 144 \\ \hline
+    2 & 320 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{340} & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{0} & 210 \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\noindent
+\underline{Fragmentos a través de L3:}
+
+\vspace{\baselineskip}
+No es necesario fragmentar.
+
+\skipline\noindent
+\underline{Fragmentos a través de L4:}
+
+\skipline
+Estos son los fragmentos que llegarán al host \textbf{B}.
+
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|r|r|rrrrr|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}{*}{Fragment Name}} & \multicolumn{1}{c|}{\multirow{2}{*}{Payload Size}} & \multicolumn{5}{c|}{Datagram Header} \\ \cline{3-7} 
+    \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{IHL} & \multicolumn{1}{c|}{Total Length} & \multicolumn{1}{c|}{MF} & \multicolumn{1}{c|}{DF} & \multicolumn{1}{c|}{Fragment Offset} \\ \hline
+    1.1.1 & 536 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{556} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 0 \\ \hline
+    1.1.2 & 40 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{60} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 67 \\ \hline
+    1.2.1 & 536 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{556} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 72 \\ \hline
+    1.2.2 & 40 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{60} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 139 \\ \hline
+    1.3 & 528 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{548} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 144 \\ \hline
+    2 & 320 & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{340} & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{0} & 210 \\ \hline
+    \end{tabular}
+\end{table}
