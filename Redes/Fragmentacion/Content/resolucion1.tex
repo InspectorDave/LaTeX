@@ -1,0 +1,124 @@
+\section*{Resolución}
+
+\noindent 1) Algunas aclaraciones:
+
+\begin{itemize}
+    \item Name es el nombre del fragmento, no es información que viaje en el paquete. Sirve a quien resuelve el ejercicio.
+    \item Payload Size es el payload del paquete IPv4. Tampoco es información presente en el paquete. En este contexto el header de la capa de transporte es parte de este payload. Tiene que ser divisible por 8, excepto en el último fragmento.
+    \item IHL (Internet Header Length) es el tamaño del header IPv4. Se mide en palabras de 32 bits (múltiplos de 4 bytes). Un paquete IPv4 sin opciones tendrá un IHL igual a 5.
+    \item Total Length es el tamaño del paquete medido en bytes.
+    \item MF (More Fragments) indica si quedan más fragmentos luego de este. El último fragmento valdrá 0.
+    \item DF (Don't Fragment) indica si este paquete no debe ser fragmentado. Si un paquete con DF seteado es mayor al MTU, el router lo descarta y envía un mensaje de error al host (utilizando ICMP).
+    \item Fragment Offset es la posición del payload de este paquete respecto al payload total. Se mide en palabras de 64 bits (múltiplos de 8 bytes). Como se mide en múltiplos de 8 bytes es que el Payload Size tiene que ser divisible por 8 (excepto en el último paquete).
+    \item El ID de cada fragmento será igual al del paquete original.
+\end{itemize}
+
+
+\noindent
+\underline{Fragmentos a través de L1:}
+
+\skipline
+Como el MTU es mayor al payload más el header, no es necesario fragmentar.
+
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|c|c|crrrr|}
+    \hline
+    \multirow{2}{*}{Name} & \multirow{2}{*}{Payload Size} & \multicolumn{5}{c|}{Datagram Header} \\ \cline{3-7} 
+        &  & \multicolumn{1}{c|}{IHL} & \multicolumn{1}{c|}{Total Length} & \multicolumn{1}{c|}{MF} & \multicolumn{1}{c|}{DF} & \multicolumn{1}{c|}{Fragment Offset} \\ \hline
+    \multicolumn{1}{|r|}{0} & \multicolumn{1}{r|}{1600} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{1620} & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{0} & 0 \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\noindent
+\underline{Fragmentos a través de L2:}
+
+\vspace{\baselineskip}
+El tamaño del payload sumado al header es mayor que el MTU, entonces hay que fragmentar el paquete en el host \textbf{A}. Como el MTU es 1000 B y el header de IPv4 tiene 20 B, intentamos crear un paquete con 980 B de payload.
+
+Para saber si vamos a poder asignar correctamente el Fragment Offset verificamos si 980 B es divisible por 8, vemos que no lo es. Por lo tanto elegimos el mayor número menor a 980 que sea divisible por 8: 976.
+
+Como no se envía con opciones, el tamaño del header es 20 B, entonces IHL 5.
+
+Como el primer fragmento no es el último, seteamos MF. El Fragment Offset del primer fragmento es 0, y el Total Length será 976 + 20.
+
+Para el fragmento 2, el payload no envíado (1600 B - 976 B) con el header pueden ser envíados en un solo paquete. Se llenan los diferentes campos y el Fragment Offset será el Payload Size del anterior medido en múltiplos de 8 B (básicamente dividir el Payload Size anterior por 8), queda 122.
+
+
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|c|c|crrrr|}
+    \hline
+    \multirow{2}{*}{Name} & \multirow{2}{*}{Payload Size} & \multicolumn{5}{c|}{Datagram Header} \\ \cline{3-7} 
+        &  & \multicolumn{1}{c|}{IHL} & \multicolumn{1}{c|}{Total Length} & \multicolumn{1}{c|}{MF} & \multicolumn{1}{c|}{DF} & \multicolumn{1}{c|}{Fragment Offset} \\ \hline
+    \multicolumn{1}{|r|}{1} & \multicolumn{1}{r|}{976} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{996} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 0 \\ \hline
+    \multicolumn{1}{|r|}{2} & \multicolumn{1}{r|}{624} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{1640} & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{0} & 122 \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\noindent
+\underline{Fragmentos a través de L3:}
+
+\vspace{\baselineskip}
+El fragmento 1 es menor al MTU de L2, hay que volver a fragmentarlo.
+
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|c|c|crrrr|}
+    \hline
+    \multirow{2}{*}{Name} & \multirow{2}{*}{Payload Size} & \multicolumn{5}{c|}{Datagram Header} \\ \cline{3-7} 
+     &  & \multicolumn{1}{c|}{IHL} & \multicolumn{1}{c|}{Total Length} & \multicolumn{1}{c|}{MF} & \multicolumn{1}{c|}{DF} & \multicolumn{1}{c|}{Fragment Offset} \\ \hline
+    \multicolumn{1}{|r|}{1.1} & \multicolumn{1}{r|}{776} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{796} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 0 \\ \hline
+    \multicolumn{1}{|r|}{1.2} & \multicolumn{1}{r|}{200} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{220} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 97 \\ \hline
+    \multicolumn{1}{|r|}{2} & \multicolumn{1}{r|}{624} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{644} & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{0} & 122 \\ \hline
+    \end{tabular}
+    \end{table}
+
+\noindent
+\underline{Fragmentos a través de L4:}
+
+\skipline
+Ningún fragmento es menor al MTU, por lo tanto no hay que volver a fragmentar.
+
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|c|c|crrrr|}
+    \hline
+    \multirow{2}{*}{Name} & \multirow{2}{*}{Payload Size} & \multicolumn{5}{c|}{Datagram Header} \\ \cline{3-7} 
+     &  & \multicolumn{1}{c|}{IHL} & \multicolumn{1}{c|}{Total Length} & \multicolumn{1}{c|}{MF} & \multicolumn{1}{c|}{DF} & \multicolumn{1}{c|}{Fragment Offset} \\ \hline
+    \multicolumn{1}{|r|}{1.1} & \multicolumn{1}{r|}{776} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{796} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 0 \\ \hline
+    \multicolumn{1}{|r|}{1.2} & \multicolumn{1}{r|}{200} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{220} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0} & 97 \\ \hline
+    \multicolumn{1}{|r|}{2} & \multicolumn{1}{r|}{624} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{644} & \multicolumn{1}{r|}{0} & \multicolumn{1}{r|}{0} & 122 \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{enumerate}[left=0cm]
+    \setcounter{enumi}{1}
+    \renewcommand{\arraystretch}{1.5}
+    \item ¿Llegarían los mismos fragmentos si se quisiera enviar el mismo paquete desde \textbf{B} hacia \textbf{A}?
+    
+    No, debido a la asimetría de la topología y el paquete que se quiere enviar. En R3 se crearían 2 fragmentos. En R2 y R1 no habría necesidad de fragmentar. Por lo tanto, llegarían solo 2 fragmentos.
+        
+    \item ¿Qué pasaría si el DF inicial fuera 1?
+    
+    El paquete es envíado pero en R1 al necesitar fragmentar el paquete es descartado y se envía ICMP ``Fragmentation Needed'' al host.
+
+    \item ¿Podría reensamblarse el paquete en el último router?
+
+    No, el reensamblado ocurre en el host destino.
+
+    \item ¿Qué pasa si se pierde uno de los fragmentos?
+
+    En el host destino se establece un timeout cuando llega el primer fragmento de un paquete. Una vez que se agota dicho timeout se descartan todos los fragmentos recibidos. Desde la capa de transporte esta situación es equivalente a la pérdida del paquete entero y dependerá de la capa de transporte si ocurre un reenvío.
+
+    \item ¿Qué pasa si llegan desordenados?
+    
+    El host destino almacena en un buffer los fragmentos que van llegando y luego los reordena a partir de su Fragment Offset.
+\end{enumerate}
