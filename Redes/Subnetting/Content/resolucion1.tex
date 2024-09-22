@@ -1,0 +1,46 @@
+\section*{Resolución}
+
+\noindent
+1) Algunas aclaraciones:
+
+\begin{itemize}
+\item \#Direcciones = \#Hosts + \#Routers + 2
+\item Los enlaces entre routers también tienen su subred.
+\item Los tamaños de bloque son potencias de 2.
+\item Las redes se asignan de mayor tamaño de bloque a menor.
+\end{itemize}
+
+Será útil ir contando cuántos hosts, routers y direcciones necesitamos para cada subred, así que se arma la siguiente tabla y se la llena. También puede ayudar tener al costado de la tabla los bits utilizables de las direcciones (en rojo, los bits que son parte del prefijo de subred):
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|r|r|r|r|c|c}
+    \cline{1-6}
+    \multicolumn{1}{|c|}{Subnet} & \multicolumn{1}{c|}{\#Hosts} & \multicolumn{1}{c|}{\#Routers} & \multicolumn{1}{c|}{\#Direcciones} & \multicolumn{1}{c|}{Tamaño bloque} & \multicolumn{1}{c|}{Prefijo de subred} & Última parte\\ \cline{1-6}
+    C & 500 & 1 & 503 & 512 & 195.42.40.0/23 & {\color{red}0}0.00000000\\ \cline{1-6}
+    A & 126 & 1 & 129 & 256 & 195.42.42.0/24 & {\color{red}10}.00000000\\ \cline{1-6}
+    B & 61 & 1 & 64 & 64 & 195.42.43.0/26 & {\color{red}11.00}000000\\ \cline{1-6}
+    D & 50 & 1 & 53 & 64 & 195.42.43.64/26 & {\color{red}11.01}000000\\ \cline{1-6}
+    E & 30 & 1 & 33 & 64 & 195.42.43.128/26 & {\color{red}11.10}000000\\ \cline{1-6}
+    p & 0 & 3 & 5 & 8 & 195.42.43.192/29 & {\color{red}11.11000}000\\ \cline{1-6}
+    F & 1 & 1 & 4 & 4 & 195.42.43.200/30 & {\color{red}11.110010}00\\ \cline{1-6}
+    $\text{r}_{34}$ & 0 & 2 & 4 & 4 & 195.42.44.204/30 & {\color{red}11.110011}00\\\cline{1-6}
+    \end{tabular}
+\end{table}
+
+\begin{enumerate}[start=2]
+    \item ¿Por qué se suma 2 a la cantidad de direcciones? Son la dirección de la subred (la primera, todos 0) y la dirección de broadcast (la última, todos 1).
+
+    \item ¿Por qué los tamaños de bloque son potencias de 2? Porque la máscaras de red son bits seguidos de 1.
+
+    \item ¿Cuántas direcciones sin utilizar quedaron?
+    
+    \hfil$1024 - 503 - 129 - 64 - 53 - 33 - 5 - 4 - 4 = 229$\hfil
+
+    \item De las direcciones sin utilizar ¿Cuántas son útiles?
+    
+    \hfil$1024 - 512 - 256 - 64 - 64 - 64 - 8 - 4 - 4 = 48$\hfil
+
+    \item ¿Se puede agregar una subred de 200 hosts? Es posible, si el router de esa subred tiene NAT activado.
+
+\end{enumerate}
