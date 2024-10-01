@@ -10,7 +10,7 @@ Soy Ezequiel Mundani Vegega, actualmente estoy estudiando Ingeniería Informáti
 
 Doy clases particulares desde 2020, principalmente de matemática, física, química; y desde 2024 soy ayudante en la materia Redes de FIUBA.
 
-En caso que quieras contactarme este es mi mail: emundani@fi.uba.ar
+En caso que quieras contactarme, este es mi mail: emundani@fi.uba.ar
 
 # Si los querés usar
 
