@@ -32,12 +32,13 @@
 }
 
 \newcommand{\medioreduceoxida}[5]{
-    \begin{table}[H]
+\vspace{-\baselineskip}
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{p{0.2\textwidth}p{0.2\textwidth}p{0.3\textwidth}}
         \multirow{2}{*}{Medio #1} & Se reduce: \ce{#2} & Agente oxidante: \ce{#3} \\
         & Se oxida: \ce{#4} & Agente reductor: \ce{#5}
     \end{tabular}
-    \end{table}
+\end{table}
 }
