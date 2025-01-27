@@ -15,3 +15,13 @@ En caso que quieras contactarme, este es mi mail: emundani@fi.uba.ar
 # Si los querés usar
 
 Podés utilizarlos y compartirlos, pero en caso de modificarlos o editarlos tendrás que citar al autor.
+
+# Cómo instalar LaTeX en tu ordenador
+
+Hay varias maneras de utilizar LaTeX, la más fácil es Overleaf (https://www.overleaf.com/) si lo querés usar en la nube, pero es lento y con el tiempo te quitan funcionalidades a menos que les pagues. Personalmente uso Tex Live integrado con VS Code.
+
+- Instalar TeX Live desde su página web: https://www.tug.org/texlive/ ¿Hace falta el coso gráfico?
+    - Recomiendo descargar el ISO con un torrent https://www.tug.org/texlive/acquire-iso.html (25 minutos de descarga + 20 minutos de instalación) en vez de la descarga "fácil" (10 horas de descarga + 20 minutos instalación).
+- Instalar VSCode
+- En VSCode, instalar la extensión de LaTeX Workshop (la de James Yu)
+- Ya estás en condiciones de usar LaTeX de manera local. Arriba a la derecha está la flechita verde para compilar, recomiendo que le asignes una hotkey.
