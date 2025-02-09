@@ -29,7 +29,12 @@ Hay varias maneras de utilizar LaTeX, la más fácil es Overleaf (https://www.ov
     - En Unix:
         - Ir dentro de la imagen .iso
         - Correr `sudo perl ./install-tl --no-interaction`
-        - Al finalizar la instalación, te va a decir que agregas el directorio donde lo instalaste a $PATH, correr `export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH` o similar.
+        - Al finalizar la instalación, te va a decir que agregas el directorio donde lo instalaste a $PATH:  en el directorio home.
+            - Ir al directorio home
+            - Abrir como root .bashrc
+            - Al final de archivo poner `export PATH="/usr/local/texlive/2024/bin/x86_64-linux/latexmk:$PATH"`, reemplazando por la ubicación de latexmk
+        - Cerrá sesión y volvete a logear
+        - Verificá que se haya instalado correctamente corriendo `which latexmk`
 - Instalar VSCode
 - En VSCode, instalar la extensión de LaTeX Workshop (la de James Yu)
 - Ya estás en condiciones de usar LaTeX de manera local. Arriba a la derecha está la flechita verde para compilar, recomiendo que le asignes una hotkey.
