@@ -37,5 +37,11 @@ Hay varias maneras de utilizar LaTeX, la más fácil es Overleaf (https://www.ov
         - Verificá que se haya instalado correctamente corriendo `which latexmk`
 - Instalar VSCode
 - En VSCode, instalar la extensión de LaTeX Workshop (la de James Yu)
-- Ya estás en condiciones de usar LaTeX de manera local. Arriba a la derecha está la flechita verde para compilar, recomiendo que le asignes una hotkey.
+- Ya estás en condiciones de usar LaTeX de manera local. Arriba a la derecha está la flechita verde para compilar.
 - Es una buena idea tener tu proyecto en un repo de GitHub, de esta manera podés colaborar con todos los que quieras y mientras una persona cambia algo no te "rompe" la compilación a vos.
+- Recomendaciones desde VSCode:
+    - Instalá un corrector de ortografía (por ejemplo, Spell Right de Bartosz Antosik).
+        - Desde configuración, que te marque los errores como info en vez de error.
+    - Deshabilitá la compilación automática desde VSCode y asignale una hotkey (yo uso ctrl+shift+R).
+    - Establecé un output directory (yo utilizo Output) y agregalo a .gitignore.
+    - Con ctrl+click en el .pdf vas al código que lo genera.
