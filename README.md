@@ -16,12 +16,26 @@ En caso que quieras contactarme, este es mi mail: emundani@fi.uba.ar
 
 Podés utilizarlos y compartirlos, pero en caso de modificarlos o editarlos tendrás que citar al autor.
 
-# Cómo instalar LaTeX en tu ordenador
+# Cómo utilizar LaTeX
 
-Hay varias maneras de utilizar LaTeX, la más fácil es Overleaf (https://www.overleaf.com/) si lo querés usar en la nube, pero es lento y con el tiempo te quitan funcionalidades a menos que les pagues. Personalmente uso Tex Live integrado con VS Code.
+Hay varias maneras de utilizar LaTeX, la más fácil es Overleaf (https://www.overleaf.com/) si lo querés usar en la nube, pero es lento y con el tiempo te quitan funcionalidades a menos que les pagues. Tiene un máximo de 2 editores por proyecto (creador + 1). Personalmente uso TeX Live integrado con VS Code.
 
-- Instalar TeX Live desde su página web: https://www.tug.org/texlive/ ¿Hace falta el coso gráfico?
+## Cómo utilizarlo localmente
+
+- Instalar TeX Live desde su página web: https://www.tug.org/texlive/
     - Recomiendo descargar el ISO con un torrent https://www.tug.org/texlive/acquire-iso.html (25 minutos de descarga + 20 minutos de instalación) en vez de la descarga "fácil" (10 horas de descarga + 20 minutos instalación).
+    - En Windows:
+        - Correr el .exe que está dentro del .iso 
+    - En Unix:
+        - Ir dentro de la imagen .iso
+        - Correr `sudo perl ./install-tl --no-interaction`
+        - Al finalizar la instalación, te va a decir que agregas el directorio donde lo instalaste a $PATH:  en el directorio home.
+            - Ir al directorio home
+            - Abrir como root .bashrc
+            - Al final de archivo poner `export PATH="/usr/local/texlive/2024/bin/x86_64-linux/latexmk:$PATH"`, reemplazando por la ubicación de latexmk
+        - Cerrá sesión y volvete a logear
+        - Verificá que se haya instalado correctamente corriendo `which latexmk`
 - Instalar VSCode
 - En VSCode, instalar la extensión de LaTeX Workshop (la de James Yu)
 - Ya estás en condiciones de usar LaTeX de manera local. Arriba a la derecha está la flechita verde para compilar, recomiendo que le asignes una hotkey.
+- Es una buena idea tener tu proyecto en un repo de GitHub, de esta manera podés colaborar con todos los que quieras y mientras una persona cambia algo no te "rompe" la compilación a vos.
